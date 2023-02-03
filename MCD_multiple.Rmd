@@ -1,0 +1,80 @@
+---
+title: "Excercise for Modelling Criminological Data"
+output:
+  learnr::tutorial:
+    allow_skip: true
+runtime: shiny_prerendered
+tutorial:
+  # id: "com.example.tutorials.my-first-tutorial"
+  version: 2.18
+  # user_id: "barret"
+description: >
+  excerices for MCD
+---
+
+```{r setup, include=FALSE}
+library(learnr)
+knitr::opts_chunk$set(echo = TRUE, highlight = TRUE)
+```
+
+## Overview
+
+This is an optional exercise for Modelling Criminological Data. 
+
+This will not be graded and is designed to help you to understand R codes you learned every week.
+
+-------------------
+
+
+## Week 1
+
+**A first lesson about R**
+
+This week we used the following R functions: 
+
++ `install.packages()`
+
++ `library()`
+
++ `search()`
+
++ `my_text <- "I love stats."`
+
++ `say()`
+
++ `print()`
+
++ `as_factor()`
+
+-------------------
+
+### Installing and loading a package
+
+```{r install_packges, echo = FALSE}
+question_text(
+  "Let's say you want to install a package called, 'cowsay' 
+  
+  As you have not installed the packge in your Rstudio yet, you need to install the packge first.
+  
+  Please enter the code you need to install the packge below:",
+
+  answer("install.packges(\"Cowsay\")", message = "Don't forget to decapitalize, R is case-sensitive"),
+  answer("install.packge(\"cowsay\")", message = "Don't forget to use plural, packges"),
+  answer("install.packges(cowsay)", message = "Don't forget to use quotation marks"),
+  answer("install.packges(\"cowsay\")", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+```{r load_packges, echo = FALSE}
+question_radio(
+  "After you succesfully installed 'cowsay', you wanted to use 'say()' function in 'cowsay'. You ran 'say(my_text)' but R returned 'Error in say(my_text) : could not find function \"say\"'. What does the error message tell you? How can you fix this one?:",
+
+  answer("Something wrong with Rstudio. So, restart the programme", message = "Nice try"),
+  answer("Blame your computer. Always stop working when you want to study. Ask mum to get you a new macbook", message = "Good reason for a new laptop"),
+  answer("Try an hour later", message = "Really, really?"),
+  answer("You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using 'load(cowsay)' code and fix it", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+

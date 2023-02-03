@@ -1,0 +1,38 @@
+ggplot(data = <DATA>) + <GEOM>(mapping = aes(<MAPPINGS>))
+
+install.packages("crimedata")
+library(crimedata)
+crime_data <- get_crime_data()
+
+library(dplyr)
+table(crime_data$city_name)
+nyc_crime <- filter(crime_data, city_name == "New York")
+
+is.na(nyc_crime$location_category)
+sum(is.na(nyc_crime$location_category))
+
+df %>% group_by(location_category)
+
+library(ggplot2)
+
+ggplot(nyc_crime)
+
+ggplot(mpg, aes(x = displ, y = hwy))
+
+ggplot(mpg, aes(x = displ, y = hwy)) + geom_point()
+
+ggplot(mpg, aes(x = displ, y = hwy)) + geom_point(aes(colour = class))
+
+
+Categorical 
+ggplot(mpg, aes(x=class))+geom_bar()
+ggplot(mpg, aes(x=manufacturer))+geom_bar()
+
+numeric
+ggplot(mpg, aes(x=hwy))+geom_histogram()
+ggplot(mpg, aes(x=hwy))+geom_density()
+
+ggplot(mpg, aes(x=hwy)) + geom_density(col="blue") + 
+  geom_histogram(aes(y=..density..), colour="black", fill=NA)
+
+ggplot(mpg, aes(x=hwy))+geom_boxplot()
