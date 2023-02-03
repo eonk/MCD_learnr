@@ -1,5 +1,5 @@
 ---
-title: "Excercise for Modelling Criminological Data"
+title: "Exercise for Modelling Criminological Data"
 output:
   learnr::tutorial:
     allow_skip: true
@@ -20,8 +20,7 @@ knitr::opts_chunk$set(echo = TRUE, highlight = TRUE)
 ## Overview
 
 This is an optional exercise for Modelling Criminological Data. 
-
-This will not be graded and is designed to help you to understand R codes you learned every week.
+This will not be graded and is designed to help you to understand R codes in the lab note. 
 
 -------------------
 

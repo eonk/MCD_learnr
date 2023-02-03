@@ -1,0 +1,14 @@
+name: MCD_multiple
+title: MCD_multiple
+username:
+account: eonk
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8210559
+bundleId: 6804302
+url: https://eonk.shinyapps.io/MCD_multiple/
+when: 1675384933.88491
+lastSyncTime: 1675384933.88492
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .gitattributes|original_multiple.Rmd|original_short_answers.Rmd
