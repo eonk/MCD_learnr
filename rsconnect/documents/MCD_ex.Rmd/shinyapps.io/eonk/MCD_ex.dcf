@@ -5,10 +5,10 @@ account: eonk
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 8210741
-bundleId: 6804307
+bundleId: 6820007
 url: https://eonk.shinyapps.io/MCD_ex/
-when: 1675385096.52491
-lastSyncTime: 1675385096.52493
+when: 1675787298.94151
+lastSyncTime: 1675787298.94154
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .gitattributes|original_multiple.Rmd|original_short_answers.Rmd
+ignoredFiles: .gitattributes|original_multiple.Rmd|original_short_answers.Rmd|README.md

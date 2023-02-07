@@ -1,5 +1,5 @@
 ---
-title: "Exercise for Modelling Criminological Data"
+title: "Excercise for Modelling Criminological Data"
 output:
   learnr::tutorial:
     allow_skip: true
@@ -9,7 +9,7 @@ tutorial:
   version: 2.18
   # user_id: "barret"
 description: >
-  excerices for MCD
+  Excerices for MCD
 ---
 
 ```{r setup, include=FALSE}
@@ -20,28 +20,44 @@ knitr::opts_chunk$set(echo = TRUE, highlight = TRUE)
 ## Overview
 
 This is an optional exercise for Modelling Criminological Data. 
-This will not be graded and is designed to help you to understand R codes in the lab note. 
+
+This will not be graded and is designed to help you to understand R codes in every sessions.
 
 -------------------
 
-
 ## Week 1
 
-**A first lesson about R**
-
 This week we used the following R functions: 
+
+**install and load a package**
 
 + `install.packages()`
 
 + `library()`
 
-+ `search()`
+**generate and print data**
 
 + `my_text <- "I love stats."`
 
++ `print()`
+
 + `say()`
 
-+ `print()`
+**explore data**
+
++ `search()`
+
++ `skim()`
+
++ `attribute()`
+
++ `mean()`
+
++ `summary()`
+
++ `str()`
+
+**transform variables into factor variables**
 
 + `as_factor()`
 
@@ -51,12 +67,12 @@ This week we used the following R functions:
 
 ```{r install_packges, echo = FALSE}
 question_text(
-  "Let's say you want to install a package called, 'cowsay' 
+  "Let's say you want to install a package called, 'cowsay'. 
   
-  As you have not installed the packge in your Rstudio yet, you need to install the packge first.
+  As you have not installed the packge in your Rstudio yet, you need to install the packge first. 
   
   Please enter the code you need to install the packge below:",
-
+ 
   answer("install.packges(\"Cowsay\")", message = "Don't forget to decapitalize, R is case-sensitive"),
   answer("install.packge(\"cowsay\")", message = "Don't forget to use plural, packges"),
   answer("install.packges(cowsay)", message = "Don't forget to use quotation marks"),
@@ -64,16 +80,125 @@ question_text(
   allow_retry = TRUE
 )
 ```
+
 ```{r load_packges, echo = FALSE}
 question_radio(
-  "After you succesfully installed 'cowsay', you wanted to use 'say()' function in 'cowsay'. You ran 'say(my_text)' but R returned 'Error in say(my_text) : could not find function \"say\"'. What does the error message tell you? How can you fix this one?:",
-
+  "After you succesfully installed 'cowsay', you wanted to use 'say()' function in the package. 
+  
+  You ran 'say(my_text)' but R returned: 
+  
+  'Error in say(my_text) : could not find function \"say\"' 
+  
+  What does the error message tell you? How can you fix this one?:",
+  
   answer("Something wrong with Rstudio. So, restart the programme", message = "Nice try"),
-  answer("Blame your computer. Always stop working when you want to study. Ask mum to get you a new macbook", message = "Good reason for a new laptop"),
-  answer("Try an hour later", message = "Really, really?"),
+  answer("Blame your computer. Always stop working when you want to study. Ask mum to get you a new laptop", message = "Good reason for a new laptop"),
+  answer("Try an hour later, give R time to think", message = "Really, really?"),
   answer("You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using 'load(cowsay)' code and fix it", correct = TRUE),
   allow_retry = TRUE
 )
 ```
 
+-------------------
 
+## Week 2
+
+This week we used the following R functions: 
+
+**read data: 'haven' package**
+
++ `read_dta()`
+
+**explore data**
+
++ `dim()`
+
++ `names()`
+
++ `class()`
+
++ `attribute()`
+
++ `head()`
+
++ `tail()`
+
++ `table()`
+
++ `lapply()`
+
++ `sum()`
+
++ `mean()`
+
+**transform variables into factor variables**
+
++ `as_factor()`
+
+**missing variable**
+
++ `is.na()`
+
+**'dplyr' package**
+
++ `filter()`
+
++ `select()`
+
++ `group_by()`
+
++ `summarise()`
+
+-------------------
+
+### descriptive analysis on 'Categorial data'
+
+```{r table, echo = FALSE}
+question_text(
+  "Let's say you are analysing a variable 'crime_record: previous criminal records of prisoners' using data names 'recidivism'. 
+  
+  The data has two values 'Yes' and 'No'. To calculate a count of obervation on the valid value of 'crime_record' variable, you want to use the table() function. 
+  
+  Please enter the code you need to get a count of obsertations (see 2.3.2 in the lab note):",
+  
+  
+  answer("table(crime_record)", message = "Don't forget to start with the data name"),
+  answer("table(recidivism$crime_record)", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+### Data manipulation
+
+```{r isna, echo = FALSE}
+question_radio(
+  "After the analysis, you found the 'crime_record' variable has some missing observations. 
+  
+  To see how many observations are missing for the variable, which code would you use?:",
+  
+  answer("select(recidivism, crime_record)", message = "nah- this is fo 'variable selection"),
+  answer("mean(is.na(recidivism$crime_record))", message = "this will tell you proportion, not count"),
+  answer("class(recidivism$crime_record)", message = "think twice"),
+  answer("sum(is.na(recidivism$crime_record))", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+### Data manipulation: dplyr
+
+<img src="https://user-images.githubusercontent.com/98951792/217301605-8f3f74e3-4b81-46f7-aec0-bd9701cc81e7.png">
+```{r filter, echo = FALSE}
+question_radio(
+  "dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.
+  
+  Let's say now you are intersted in ONLY prisoners who have crime records, been recorded 'Yes' to the 'crime_record' variable. 
+  
+  To filter these observation which code would you use:",
+  
+  answer("mutate(recidivism, crime_record == 'Yes')", message = "nah- this is fo 'variable selection"),
+  answer("select(recidivism, crime_record == 'Yes')", message = "this will tell you proportion, not count"),
+  answer("filter(recidivism, crime_record == 'Yes')", correct = TRUE),
+  answer("summarise(recidivism, crime_record == 'Yes')", message = "think twice"),
+  allow_retry = TRUE
+)
+```
