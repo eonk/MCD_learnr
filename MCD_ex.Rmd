@@ -155,31 +155,31 @@ This week we used the following R functions:
 
 ```{r table, echo = FALSE}
 question_text(
-  "Let's say you are analysing a variable 'crime_record: previous criminal records of prisoners' using data names 'recidivism'. 
+  "Let's say you are analysing a variable 'criminal_record'(reoffending criminal records of prisoners) using 'recidivism' data. 
   
-  The data has two values 'Yes' and 'No'. To calculate a count of obervation on the valid value of 'crime_record' variable, you want to use the table() function. 
+  The variable has two values 'Yes' and 'No'. To calculate a count of obervation on the valid value of the 'criminal_record' variable, you want to use the table() function. 
   
-  Please enter the code you need to get a count of obsertations (see 2.3.2 in the lab note):",
+  Please enter the code you need to get a count of observations (see 2.3.2 in the lab note):",
   
   
-  answer("table(crime_record)", message = "Don't forget to start with the data name"),
-  answer("table(recidivism$crime_record)", correct = TRUE),
+  answer("table(criminal_record)", message = "Don't forget to start with the data name"),
+  answer("table(recidivism$criminal_record)", correct = TRUE),
   allow_retry = TRUE
 )
 ```
 
-### Data manipulation
+### Data manipulation: missing variable
 
 ```{r isna, echo = FALSE}
 question_radio(
-  "After the analysis, you found the 'crime_record' variable has some missing observations. 
+  "You found the 'criminal_record' variable has some missing observations. 
   
-  To see how many observations are missing for the variable, which code would you use?:",
+  To see how many observations are missing, which code would you use?:",
   
-  answer("select(recidivism, crime_record)", message = "nah- this is fo 'variable selection"),
-  answer("mean(is.na(recidivism$crime_record))", message = "this will tell you proportion, not count"),
-  answer("class(recidivism$crime_record)", message = "think twice"),
-  answer("sum(is.na(recidivism$crime_record))", correct = TRUE),
+  answer("select(recidivism, criminal_record)", message = "nah- this is fo 'variable selection"),
+  answer("mean(is.na(recidivism$criminal_record))", message = "mean? really?"),
+  answer("class(recidivism$criminal_record)", message = "think twice"),
+  answer("sum(is.na(recidivism$criminal_record))", correct = TRUE),
   allow_retry = TRUE
 )
 ```
@@ -191,14 +191,16 @@ question_radio(
 question_radio(
   "dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.
   
-  Let's say now you are intersted in ONLY prisoners who have crime records, been recorded 'Yes' to the 'crime_record' variable. 
+  Let's say you are intersted in ONLY prisoners who have previous crime records not all of them.
   
-  To filter these observation which code would you use:",
+  Again, they are recorded as 'Yes' to the 'criminal_record' variable. 
   
-  answer("mutate(recidivism, crime_record == 'Yes')", message = "nah- this is fo 'variable selection"),
-  answer("select(recidivism, crime_record == 'Yes')", message = "this will tell you proportion, not count"),
-  answer("filter(recidivism, crime_record == 'Yes')", correct = TRUE),
-  answer("summarise(recidivism, crime_record == 'Yes')", message = "think twice"),
+  To filter these observations which code would you use:",
+  
+  answer("mutate(recidivism, criminal_record == 'Yes')", message = "nah- this is for 'variable selection"),
+  answer("select(recidivism, criminal_record == 'Yes')", message = "this will tell you proportion, not count"),
+  answer("filter(recidivism, criminal_record == 'Yes')", correct = TRUE),
+  answer("filter(recidivism, criminal_record == 'No')", message = "cmon-"),
   allow_retry = TRUE
 )
 ```
