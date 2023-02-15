@@ -151,7 +151,7 @@ This week we used the following R functions:
 
 -------------------
 
-### descriptive analysis on 'Categorial data'
+### Descriptive analysis on 'Categorial data'
 
 ```{r table, echo = FALSE}
 question_text(
@@ -200,7 +200,118 @@ question_radio(
   answer("mutate(recidivism, criminal_record == 'Yes')", message = "nah- this is for 'variable selection"),
   answer("select(recidivism, criminal_record == 'Yes')", message = "this will tell you proportion, not count"),
   answer("filter(recidivism, criminal_record == 'Yes')", correct = TRUE),
-  answer("filter(recidivism, criminal_record == 'No')", message = "cmon-"),
+  answer("summarise(recidivism, criminal_record == 'Yes')", message = "cmon-"),
   allow_retry = TRUE
 )
 ```
+
+-------------------
+
+## Week 2
+
+This week we used the following R functions: 
+
+**read data: 'readr' package**
+
++ `read_csv()`
+
+**explore data**
+
++ `names()`
+
+**visualise data**
+
++ `ggplot()`
+
++ `+ geom_bar()`
+
++ `+ geom_point()`
+
++ `+ geom_histogram()`
+
++ `+ geom_boxplot()`
+
++ `+ theme()`
+
++ `+ facet_warp()`
+
+**transform variables into factor variables**
+
++ `as_factor()`
+
+**transform variables into factor variables**
+
++ `as_factor()`
+
+
+
+**missing variable**
+
++ `is.na()`
+
+**'dplyr' package**
+
++ `filter()`
+
++ `select()`
+
++ `group_by()`
+
++ `summarise()`
+
+-------------------
+
+### Descriptive analysis on 'Categorial data'
+
+```{r table, echo = FALSE}
+question_text(
+  "Let's say you are analysing a variable 'criminal_record'(reoffending criminal records of prisoners) using 'recidivism' data. 
+  
+  The variable has two values 'Yes' and 'No'. To calculate a count of obervation on the valid value of the 'criminal_record' variable, you want to use the table() function. 
+  
+  Please enter the code you need to get a count of observations (see 2.3.2 in the lab note):",
+  
+  
+  answer("table(criminal_record)", message = "Don't forget to start with the data name"),
+  answer("table(recidivism$criminal_record)", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+### Data manipulation: missing variable
+
+```{r isna, echo = FALSE}
+question_radio(
+  "You found the 'criminal_record' variable has some missing observations. 
+  
+  To see how many observations are missing, which code would you use?:",
+  
+  answer("select(recidivism, criminal_record)", message = "nah- this is fo 'variable selection"),
+  answer("mean(is.na(recidivism$criminal_record))", message = "mean? really?"),
+  answer("class(recidivism$criminal_record)", message = "think twice"),
+  answer("sum(is.na(recidivism$criminal_record))", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+### Data manipulation: dplyr
+
+<img src="https://user-images.githubusercontent.com/98951792/217301605-8f3f74e3-4b81-46f7-aec0-bd9701cc81e7.png">
+```{r filter, echo = FALSE}
+question_radio(
+  "dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.
+  
+  Let's say you are intersted in ONLY prisoners who have previous crime records not all of them.
+  
+  Again, they are recorded as 'Yes' to the 'criminal_record' variable. 
+  
+  To filter these observations which code would you use:",
+  
+  answer("mutate(recidivism, criminal_record == 'Yes')", message = "nah- this is for 'variable selection"),
+  answer("select(recidivism, criminal_record == 'Yes')", message = "this will tell you proportion, not count"),
+  answer("filter(recidivism, criminal_record == 'Yes')", correct = TRUE),
+  answer("summarise(recidivism, criminal_record == 'Yes')", message = "cmon-"),
+  allow_retry = TRUE
+)
+```
+
