@@ -211,21 +211,17 @@ question_radio(
 
 This week we used the following R functions: 
 
-**visualise data: ggplot2 package**
-
-+ `read_csv()`
-
-**clean data: janitor package**
-
-+ `clean_names()`
-
-**read data: 'readr' package**
+**import data: 'readr' package**
 
 + `read_csv()`
 
 **explore data**
 
 + `names()`
+
+**clean data: janitor package**
+
++ `clean_names()`
 
 **visualise data**
 
@@ -245,13 +241,13 @@ This week we used the following R functions:
 
 + `+ facet_warp()`
 
-+ `+ + facet_grid`
++ `+ facet_grid`
 
-**transform variables into factor variables**
+**transform a variable into a factor variable**
 
 + `as_factor()`
 
-**transform a numeric variables into a categorical variables**
+**create a categorical variable using a numeric variable**
 
 + `Boston$lowval[Boston$medv <= 17.02] <- "Low value"`
 
@@ -265,7 +261,7 @@ question_text(
   
   The mean value of 'gdpPercap' is 11888.5 and you want to make two values 'low_gdp' and 'high_gdp' using the mean value. 
   
-  Ok, so the data name is 'prison', a numeric variable is 'gdpPercap', a new categorical varaible is 'high_low_gdp', and you are creating the value is 'high_gdp' using the mean value, 11888.5. 
+  Ok, so the data name is 'prison', the numeric variable is 'gdpPercap',  the new categorical varaible is 'high_low_gdp', and you are creating one of the values, 'high_gdp' using the mean value, 11888.5.
   
   Apply the code we learn in week 3 'Boston$lowval[Boston$medv > 17.02] <- \"Higher value\"' please enter the code you need to put in the blank space below (see 3.4 in the lab note)
   
