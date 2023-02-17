@@ -148,18 +148,18 @@ codes in every sessions.</p>
 class="section level3">
 <h3>Installing and loading a package</h3>
 <div class="panel panel-default tutorial-question-container">
-<div data-label="install_packges" class="tutorial-question panel-body">
-<div id="install_packges-answer_container" class="shiny-html-output"></div>
-<div id="install_packges-message_container" class="shiny-html-output"></div>
-<div id="install_packges-action_button_container" class="shiny-html-output"></div>
+<div data-label="q1_1" class="tutorial-question panel-body">
+<div id="q1_1-answer_container" class="shiny-html-output"></div>
+<div id="q1_1-message_container" class="shiny-html-output"></div>
+<div id="q1_1-action_button_container" class="shiny-html-output"></div>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
 <div class="panel panel-default tutorial-question-container">
-<div data-label="load_packges" class="tutorial-question panel-body">
-<div id="load_packges-answer_container" class="shiny-html-output"></div>
-<div id="load_packges-message_container" class="shiny-html-output"></div>
-<div id="load_packges-action_button_container" class="shiny-html-output"></div>
+<div data-label="q1_2" class="tutorial-question panel-body">
+<div id="q1_2-answer_container" class="shiny-html-output"></div>
+<div id="q1_2-message_container" class="shiny-html-output"></div>
+<div id="q1_2-action_button_container" class="shiny-html-output"></div>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
@@ -206,10 +206,10 @@ class="section level3">
 class="section level3">
 <h3>Descriptive analysis on ‘Categorial data’</h3>
 <div class="panel panel-default tutorial-question-container">
-<div data-label="table" class="tutorial-question panel-body">
-<div id="table-answer_container" class="shiny-html-output"></div>
-<div id="table-message_container" class="shiny-html-output"></div>
-<div id="table-action_button_container" class="shiny-html-output"></div>
+<div data-label="q2_1" class="tutorial-question panel-body">
+<div id="q2_1-answer_container" class="shiny-html-output"></div>
+<div id="q2_1-message_container" class="shiny-html-output"></div>
+<div id="q2_1-action_button_container" class="shiny-html-output"></div>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
@@ -218,10 +218,10 @@ class="section level3">
 class="section level3">
 <h3>Data manipulation: missing variable</h3>
 <div class="panel panel-default tutorial-question-container">
-<div data-label="isna" class="tutorial-question panel-body">
-<div id="isna-answer_container" class="shiny-html-output"></div>
-<div id="isna-message_container" class="shiny-html-output"></div>
-<div id="isna-action_button_container" class="shiny-html-output"></div>
+<div data-label="q2_2" class="tutorial-question panel-body">
+<div id="q2_2-answer_container" class="shiny-html-output"></div>
+<div id="q2_2-message_container" class="shiny-html-output"></div>
+<div id="q2_2-action_button_container" class="shiny-html-output"></div>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
@@ -230,10 +230,76 @@ class="section level3">
 <h3>Data manipulation: dplyr</h3>
 <p><img src="https://user-images.githubusercontent.com/98951792/217301605-8f3f74e3-4b81-46f7-aec0-bd9701cc81e7.png"></p>
 <div class="panel panel-default tutorial-question-container">
-<div data-label="filter" class="tutorial-question panel-body">
-<div id="filter-answer_container" class="shiny-html-output"></div>
-<div id="filter-message_container" class="shiny-html-output"></div>
-<div id="filter-action_button_container" class="shiny-html-output"></div>
+<div data-label="q2_3" class="tutorial-question panel-body">
+<div id="q2_3-answer_container" class="shiny-html-output"></div>
+<div id="q2_3-message_container" class="shiny-html-output"></div>
+<div id="q2_3-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+<hr />
+</div>
+</div>
+<div id="section-week-3" class="section level2">
+<h2>Week 3</h2>
+<p>This week we used the following R functions:</p>
+<p><strong>visualise data: ggplot2 package</strong></p>
+<ul>
+<li><code>read_csv()</code></li>
+</ul>
+<p><strong>clean data: janitor package</strong></p>
+<ul>
+<li><code>clean_names()</code></li>
+</ul>
+<p><strong>read data: ‘readr’ package</strong></p>
+<ul>
+<li><code>read_csv()</code></li>
+</ul>
+<p><strong>explore data</strong></p>
+<ul>
+<li><code>names()</code></li>
+</ul>
+<p><strong>visualise data</strong></p>
+<ul>
+<li><p><code>ggplot()</code></p></li>
+<li><p><code>+ geom_bar()</code></p></li>
+<li><p><code>+ geom_point()</code></p></li>
+<li><p><code>+ geom_histogram()</code></p></li>
+<li><p><code>+ geom_density()</code></p></li>
+<li><p><code>+ geom_hline()</code></p></li>
+<li><p><code>+ geom_boxplot()</code></p></li>
+<li><p><code>+ facet_warp()</code></p></li>
+<li><p><code>+ + facet_grid</code></p></li>
+</ul>
+<p><strong>transform variables into factor variables</strong></p>
+<ul>
+<li><code>as_factor()</code></li>
+</ul>
+<p><strong>transform a numeric variables into a categorical
+variables</strong></p>
+<ul>
+<li><code>Boston$lowval[Boston$medv &lt;= 17.02] &lt;- "Low value"</code></li>
+</ul>
+<hr />
+<div id="section-transform-data" class="section level3">
+<h3>transform data</h3>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="q3_1" class="tutorial-question panel-body">
+<div id="q3_1-answer_container" class="shiny-html-output"></div>
+<div id="q3_1-message_container" class="shiny-html-output"></div>
+<div id="q3_1-action_button_container" class="shiny-html-output"></div>
+<script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
+</div>
+</div>
+</div>
+<div id="section-visualise-data" class="section level3">
+<h3>visualise data</h3>
+<p><img src="https://user-images.githubusercontent.com/98951792/219618616-8a3833e2-a6c9-4e24-8e42-3f5b66d2c8ed.png"></p>
+<div class="panel panel-default tutorial-question-container">
+<div data-label="q3_2" class="tutorial-question panel-body">
+<div id="q3_2-answer_container" class="shiny-html-output"></div>
+<div id="q3_2-message_container" class="shiny-html-output"></div>
+<div id="q3_2-action_button_container" class="shiny-html-output"></div>
 <script>if (Tutorial.triggerMathJax) Tutorial.triggerMathJax()</script>
 </div>
 </div>
@@ -264,86 +330,83 @@ session$onSessionEnded(function() {
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "install_packges", 
-    question = structure("<p>Let’s say you want to install a package called, ‘cowsay’.<\u002fp>\n<p>As you have not installed the packge in your Rstudio yet, you need to install the packge first.<\u002fp>\n<p>Please enter the code you need to install the packge below:<\u002fp>\n", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_9060c07", 
-        option = "install.packges(\"Cowsay\")", value = "install.packges(\"Cowsay\")", 
-        label = structure("install.packges(“Cowsay”)", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Don’t forget to decapitalize, R is case-sensitive", html = TRUE, class = c("html", 
-        "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3269295", 
-        option = "install.packge(\"cowsay\")", value = "install.packge(\"cowsay\")", 
-        label = structure("install.packge(“cowsay”)", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Don’t forget to use plural, packges", html = TRUE, class = c("html", 
-        "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_204e665", 
-        option = "install.packges(cowsay)", value = "install.packges(cowsay)", 
-        label = structure("install.packges(cowsay)", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Don’t forget to use quotation marks", html = TRUE, class = c("html", 
-        "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_1a72667", 
-        option = "install.packges(\"cowsay\")", value = "install.packges(\"cowsay\")", 
-        label = structure("install.packges(“cowsay”)", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), message = NULL, post_message = NULL), ids = list(
-        answer = "install_packges-answer", question = "install_packges"), 
-    loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1126014655.47566, options = list(placeholder = "Enter answer here...", 
-        trim = TRUE)), class = c("learnr_text", "tutorial_question"
-)), session = session)
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "q1_1", question = structure("<p>Let’s say you want to install a package called, ‘cowsay’.<\u002fp>\n<p>As you have not installed the packge in your Rstudio yet, you need to install the packge first.<\u002fp>\n<p>Please enter the code you need to install the packge below:<\u002fp>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_43824cc", 
+    option = "install.packges(\"Cowsay\")", value = "install.packges(\"Cowsay\")", 
+    label = structure("install.packges(“Cowsay”)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Don’t forget to decapitalize, R is case-sensitive", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9cda820", 
+    option = "install.packge(\"cowsay\")", value = "install.packge(\"cowsay\")", 
+    label = structure("install.packge(“cowsay”)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Don’t forget to use plural, packges", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1f9ee9f", 
+    option = "install.packges(cowsay)", value = "install.packges(cowsay)", 
+    label = structure("install.packges(cowsay)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Don’t forget to use quotation marks", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_6f75cbe", 
+    option = "install.packges(\"cowsay\")", value = "install.packges(\"cowsay\")", 
+    label = structure("install.packges(“cowsay”)", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "q1_1-answer", question = "q1_1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1605914375.75219, 
+    options = list(placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
+"tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "load_packges", 
-    question = structure("<p>After you succesfully installed ‘cowsay’, you wanted to use ‘say()’ function in the package.<\u002fp>\n<p>You ran ‘say(my_text)’ but R returned:<\u002fp>\n<p>‘Error in say(my_text) : could not find function “say”’<\u002fp>\n<p>What does the error message tell you? How can you fix this one?:<\u002fp>\n", html = TRUE, class = c("html", 
-    "character")), answers = list(structure(list(id = "lnr_ans_8d3e309", 
-        option = "Something wrong with Rstudio. So, restart the programme", 
-        value = "Something wrong with Rstudio. So, restart the programme", 
-        label = structure("Something wrong with Rstudio. So, restart the programme", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Nice try", html = TRUE, class = c("html", 
-        "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2584fb1", 
-        option = "Blame your computer. Always stop working when you want to study. Ask mum to get you a new laptop", 
-        value = "Blame your computer. Always stop working when you want to study. Ask mum to get you a new laptop", 
-        label = structure("Blame your computer. Always stop working when you want to study. Ask mum to get you a new laptop", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Good reason for a new laptop", html = TRUE, class = c("html", 
-        "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_2b25263", 
-        option = "Try an hour later, give R time to think", value = "Try an hour later, give R time to think", 
-        label = structure("Try an hour later, give R time to think", html = TRUE, class = c("html", 
-        "character")), correct = FALSE, message = structure("Really, really?", html = TRUE, class = c("html", 
-        "character")), type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer")), structure(list(id = "lnr_ans_3222e58", 
-        option = "You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using 'load(cowsay)' code and fix it", 
-        value = "You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using 'load(cowsay)' code and fix it", 
-        label = structure("You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using ‘load(cowsay)’ code and fix it", html = TRUE, class = c("html", 
-        "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-    "tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
-    "character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
-    "character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
-    "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
-    "character")), message = NULL, post_message = NULL), ids = list(
-        answer = "load_packges-answer", question = "load_packges"), 
-    loading = NULL, random_answer_order = FALSE, allow_retry = TRUE, 
-    seed = 1803177895.66033, options = list()), class = c("learnr_radio", 
-"tutorial_question")), session = session)
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q1_2", question = structure("<p>After you succesfully installed ‘cowsay’, you wanted to use ‘say()’ function in the package.<\u002fp>\n<p>You ran ‘say(my_text)’ but R returned:<\u002fp>\n<p>‘Error in say(my_text) : could not find function “say”’<\u002fp>\n<p>What does the error message tell you? How can you fix this one?:<\u002fp>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_b0c85bb", 
+    option = "Something wrong with Rstudio. So, restart the programme", 
+    value = "Something wrong with Rstudio. So, restart the programme", 
+    label = structure("Something wrong with Rstudio. So, restart the programme", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Nice try", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_fab7879", 
+    option = "Blame your computer. Always stop working when you want to study. Ask mum to get you a new laptop", 
+    value = "Blame your computer. Always stop working when you want to study. Ask mum to get you a new laptop", 
+    label = structure("Blame your computer. Always stop working when you want to study. Ask mum to get you a new laptop", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Good reason for a new laptop", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_82392f8", 
+    option = "Try an hour later, give R time to think", value = "Try an hour later, give R time to think", 
+    label = structure("Try an hour later, give R time to think", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("Really, really?", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_9a8bfa6", 
+    option = "You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using 'load(cowsay)' code and fix it", 
+    value = "You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using 'load(cowsay)' code and fix it", 
+    label = structure("You realised you forgot to invoke the library(package) command to load it into the current session. Load a package using ‘load(cowsay)’ code and fix it", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "q1_2-answer", question = "q1_2"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 681801431.182511, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "table", question = structure("<p>Let’s say you are analysing a variable ‘criminal_record’(reoffending criminal records of prisoners) using ‘recidivism’ data.<\u002fp>\n<p>The variable has two values ‘Yes’ and ‘No’. To calculate a count of obervation on the valid value of the ‘criminal_record’ variable, you want to use the table() function.<\u002fp>\n<p>Please enter the code you need to get a count of observations (see 2.3.2 in the lab note):<\u002fp>\n", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_8fd7441", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "q2_1", question = structure("<p>Let’s say you are analysing a variable ‘criminal_record’(reoffending criminal records of prisoners) using ‘recidivism’ data.<\u002fp>\n<p>The variable has two values ‘Yes’ and ‘No’. To calculate a count of obervation on the valid value of the ‘criminal_record’ variable, you want to use the table() function.<\u002fp>\n<p>Please enter the code you need to get a count of observations (see 2.3.2 in the lab note):<\u002fp>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_900ead4", 
     option = "table(criminal_record)", value = "table(criminal_record)", 
     label = structure("table(criminal_record)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("Don’t forget to start with the data name", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e2677de", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8ee0c56", 
     option = "table(recidivism$criminal_record)", value = "table(recidivism$criminal_record)", 
     label = structure("table(recidivism$criminal_record)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -353,31 +416,31 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label =
 "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
-    answer = "table-answer", question = "table"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 968223399.049136, 
+    answer = "q2_1-answer", question = "q2_1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1574178920.26697, 
     options = list(placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
 "tutorial_question")), session = session)
 </script>
 
 
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "isna", question = structure("<p>You found the ‘criminal_record’ variable has some missing observations.<\u002fp>\n<p>To see how many observations are missing, which code would you use?:<\u002fp>\n", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_2865764", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q2_2", question = structure("<p>You found the ‘criminal_record’ variable has some missing observations.<\u002fp>\n<p>To see how many observations are missing, which code would you use?:<\u002fp>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_77c7846", 
     option = "select(recidivism, criminal_record)", value = "select(recidivism, criminal_record)", 
     label = structure("select(recidivism, criminal_record)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("nah- this is fo ’variable selection", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3ce60f5", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_a0ca8db", 
     option = "mean(is.na(recidivism$criminal_record))", value = "mean(is.na(recidivism$criminal_record))", 
     label = structure("mean(is.na(recidivism$criminal_record))", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("mean? really?", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_3176b03", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_4a58fba", 
     option = "class(recidivism$criminal_record)", value = "class(recidivism$criminal_record)", 
     label = structure("class(recidivism$criminal_record)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("think twice", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_160f179", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_ef9e6e", 
     option = "sum(is.na(recidivism$criminal_record))", value = "sum(is.na(recidivism$criminal_record))", 
     label = structure("sum(is.na(recidivism$criminal_record))", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
@@ -387,29 +450,29 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
-    answer = "isna-answer", question = "isna"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 98279289.4542351, 
+    answer = "q2_2-answer", question = "q2_2"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1245705453.41992, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "filter", question = structure("<p>dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.<\u002fp>\n<p>Let’s say you are intersted in ONLY prisoners who have previous crime records not all of them.<\u002fp>\n<p>Again, they are recorded as ‘Yes’ to the ‘criminal_record’ variable.<\u002fp>\n<p>To filter these observations which code would you use:<\u002fp>\n", html = TRUE, class = c("html", 
-"character")), answers = list(structure(list(id = "lnr_ans_4beda60", 
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q2_3", question = structure("<p>dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.<\u002fp>\n<p>Let’s say you are intersted in ONLY prisoners who have previous crime records not all of them.<\u002fp>\n<p>Again, they are recorded as ‘Yes’ to the ‘criminal_record’ variable.<\u002fp>\n<p>To filter these observations which code would you use:<\u002fp>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_5d7550d", 
     option = "mutate(recidivism, criminal_record == 'Yes')", 
     value = "mutate(recidivism, criminal_record == 'Yes')", label = structure("mutate(recidivism, criminal_record == ‘Yes’)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("nah- this is for ’variable selection", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_510f5ab", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_f2dd43f", 
     option = "select(recidivism, criminal_record == 'Yes')", 
     value = "select(recidivism, criminal_record == 'Yes')", label = structure("select(recidivism, criminal_record == ‘Yes’)", html = TRUE, class = c("html", 
     "character")), correct = FALSE, message = structure("this will tell you proportion, not count", html = TRUE, class = c("html", 
     "character")), type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_e0e90b4", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_55e94bd", 
     option = "filter(recidivism, criminal_record == 'Yes')", 
     value = "filter(recidivism, criminal_record == 'Yes')", label = structure("filter(recidivism, criminal_record == ‘Yes’)", html = TRUE, class = c("html", 
     "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
-"tutorial_quiz_answer")), structure(list(id = "lnr_ans_189dee7", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_2708ab9", 
     option = "summarise(recidivism, criminal_record == 'Yes')", 
     value = "summarise(recidivism, criminal_record == 'Yes')", 
     label = structure("summarise(recidivism, criminal_record == ‘Yes’)", html = TRUE, class = c("html", 
@@ -421,8 +484,91 @@ learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label 
 "character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
 "character")), message = NULL, post_message = NULL), ids = list(
-    answer = "filter-answer", question = "filter"), loading = NULL, 
-    random_answer_order = FALSE, allow_retry = TRUE, seed = 820199708.618065, 
+    answer = "q2_3-answer", question = "q2_3"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 103101080.95199, 
+    options = list()), class = c("learnr_radio", "tutorial_question"
+)), session = session)
+</script>
+
+
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_text", label = "q3_1", question = structure("<p>The ‘prison’ data we used for this week homework task has a variable ‘gdpPercap’ and lets say you want to create a new categorical variables ‘high_low_gdp’ using the ‘gdpPercap’ variable.<\u002fp>\n<p>The mean value of ‘gdpPercap’ is 11888.5 and you want to make two values ‘low_gdp’ and ‘high_gdp’ using the mean value.<\u002fp>\n<p>Ok, so the data name is ‘prison’, a numeric variable is ‘gdpPercap’, a new categorical varaible is ‘high_low_gdp’, and you are creating the value is ‘high_gdp’ using the mean value, 11888.5.<\u002fp>\n<p>Apply the code we learn in week 3 ‘Boston$lowval[Boston$medv &gt; 17.02] &lt;- “Higher value”’ please enter the code you need to put in the blank space below (see 3.4 in the lab note)<\u002fp>\n<p>_______________________________________________ &lt;- “high_gdp”<\u002fp>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_3499e5b", 
+    option = "prisongdpPercap$[prison$high_low_gdp > 11888.5]", 
+    value = "prisongdpPercap$[prison$high_low_gdp > 11888.5]", 
+    label = structure("prisongdpPercap$[prison$high_low_gdp &gt; 11888.5]", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("so close! let’s try again", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_5d8e0d4", 
+    option = "prison$high_low_gdp[prison$gdpPercap > 11888.5]", 
+    value = "prison$high_low_gdp[prison$gdpPercap > 11888.5]", 
+    label = structure("prison$high_low_gdp[prison$gdpPercap &gt; 11888.5]", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_7336077", 
+    option = "prison$high_low_gdp[prison$gdpPercap>11888.5]", 
+    value = "prison$high_low_gdp[prison$gdpPercap>11888.5]", 
+    label = structure("prison$high_low_gdp[prison$gdpPercap&gt;11888.5]", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_18e8990", 
+    option = "prison$high_low_gdp[prison$gdpPercap> 11888.5]", 
+    value = "prison$high_low_gdp[prison$gdpPercap> 11888.5]", 
+    label = structure("prison$high_low_gdp[prison$gdpPercap&gt; 11888.5]", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_16db3bb", 
+    option = "prison$high_low_gdp[prison$gdpPercap >11888.5]", 
+    value = "prison$high_low_gdp[prison$gdpPercap >11888.5]", 
+    label = structure("prison$high_low_gdp[prison$gdpPercap &gt;11888.5]", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_536337a", 
+    option = "prison$high_low_gdp[prison$gdpPercap >11888.5]", 
+    value = "prison$high_low_gdp[prison$gdpPercap >11888.5]", 
+    label = structure("prison$high_low_gdp[prison$gdpPercap &gt;11888.5]", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "q3_1-answer", question = "q3_1"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 713739383.667639, 
+    options = list(placeholder = "Enter answer here...", trim = TRUE)), class = c("learnr_text", 
+"tutorial_question")), session = session)
+</script>
+ 
+<script type="application/shiny-prerendered" data-context="server">
+learnr:::question_prerendered_chunk(structure(list(type = "learnr_radio", label = "q3_2", question = structure("<p>ggplot2 is a plotting package that provides helpful commands to create complex plots from data in a data frame.<\u002fp>\n<p>Here we are going to create a graph presenting the correlation of two variables ‘assaults’ and ‘domestic_violence’.<\u002fp>\n<p>What variable is mapped to y, and what is mapped to x, and what is mapped to color?:<\u002fp>\n", html = TRUE, class = c("html", 
+"character")), answers = list(structure(list(id = "lnr_ans_48c86a5", 
+    option = "aes(x=assaults, y=domestic_violence, fill=police999call)", 
+    value = "aes(x=assaults, y=domestic_violence, fill=police999call)", 
+    label = structure("aes(x=assaults, y=domestic_violence, fill=police999call)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("nah- diff colour option we are using", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_1fef824", 
+    option = "aes(x=assaults, y=domestic_violence, colour=police999call)", 
+    value = "aes(x=assaults, y=domestic_violence, colour=police999call)", 
+    label = structure("aes(x=assaults, y=domestic_violence, colour=police999call)", html = TRUE, class = c("html", 
+    "character")), correct = TRUE, message = NULL, type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_b64559b", 
+    option = "aes(x=domestic_violence, y=assaults, colour=police999call)", 
+    value = "aes(x=domestic_violence, y=assaults, colour=police999call)", 
+    label = structure("aes(x=domestic_violence, y=assaults, colour=police999call)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("see the variable names on the xy-axis", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer")), structure(list(id = "lnr_ans_8cb4e6", 
+    option = "aes(x=domestic_violence, y=assaults, alpha=police999call)", 
+    value = "aes(x=domestic_violence, y=assaults, alpha=police999call)", 
+    label = structure("aes(x=domestic_violence, y=assaults, alpha=police999call)", html = TRUE, class = c("html", 
+    "character")), correct = FALSE, message = structure("cmon-", html = TRUE, class = c("html", 
+    "character")), type = "literal"), class = c("tutorial_question_answer", 
+"tutorial_quiz_answer"))), button_labels = list(submit = structure("<span data-i18n=\"button.questionsubmit\">Submit Answer<\u002fspan>", html = TRUE, class = c("html", 
+"character")), try_again = structure("<span data-i18n=\"button.questiontryagain\">Try Again<\u002fspan>", html = TRUE, class = c("html", 
+"character"))), messages = list(correct = structure("Correct!", html = TRUE, class = c("html", 
+"character")), try_again = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), incorrect = structure("Incorrect", html = TRUE, class = c("html", 
+"character")), message = NULL, post_message = NULL), ids = list(
+    answer = "q3_2-answer", question = "q3_2"), loading = NULL, 
+    random_answer_order = FALSE, allow_retry = TRUE, seed = 1421442166.33809, 
     options = list()), class = c("learnr_radio", "tutorial_question"
 )), session = session)
 </script>

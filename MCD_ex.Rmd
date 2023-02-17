@@ -65,7 +65,7 @@ This week we used the following R functions:
 
 ### Installing and loading a package
 
-```{r install_packges, echo = FALSE}
+```{r q1_1, echo = FALSE}
 question_text(
   "Let's say you want to install a package called, 'cowsay'. 
   
@@ -81,7 +81,7 @@ question_text(
 )
 ```
 
-```{r load_packges, echo = FALSE}
+```{r q1_2, echo = FALSE}
 question_radio(
   "After you succesfully installed 'cowsay', you wanted to use 'say()' function in the package. 
   
@@ -153,7 +153,7 @@ This week we used the following R functions:
 
 ### Descriptive analysis on 'Categorial data'
 
-```{r table, echo = FALSE}
+```{r q2_1, echo = FALSE}
 question_text(
   "Let's say you are analysing a variable 'criminal_record'(reoffending criminal records of prisoners) using 'recidivism' data. 
   
@@ -170,7 +170,7 @@ question_text(
 
 ### Data manipulation: missing variable
 
-```{r isna, echo = FALSE}
+```{r q2_2, echo = FALSE}
 question_radio(
   "You found the 'criminal_record' variable has some missing observations. 
   
@@ -187,7 +187,7 @@ question_radio(
 ### Data manipulation: dplyr
 
 <img src="https://user-images.githubusercontent.com/98951792/217301605-8f3f74e3-4b81-46f7-aec0-bd9701cc81e7.png">
-```{r filter, echo = FALSE}
+```{r q2_3, echo = FALSE}
 question_radio(
   "dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.
   
@@ -207,9 +207,17 @@ question_radio(
 
 -------------------
 
-## Week 2
+## Week 3
 
 This week we used the following R functions: 
+
+**visualise data: ggplot2 package**
+
++ `read_csv()`
+
+**clean data: janitor package**
+
++ `clean_names()`
 
 **read data: 'readr' package**
 
@@ -229,88 +237,65 @@ This week we used the following R functions:
 
 + `+ geom_histogram()`
 
-+ `+ geom_boxplot()`
++ `+ geom_density()`
 
-+ `+ theme()`
++ `+ geom_hline()`
+
++ `+ geom_boxplot()`
 
 + `+ facet_warp()`
 
-**transform variables into factor variables**
-
-+ `as_factor()`
++ `+ + facet_grid`
 
 **transform variables into factor variables**
 
 + `as_factor()`
 
+**transform a numeric variables into a categorical variables**
 
-
-**missing variable**
-
-+ `is.na()`
-
-**'dplyr' package**
-
-+ `filter()`
-
-+ `select()`
-
-+ `group_by()`
-
-+ `summarise()`
++ `Boston$lowval[Boston$medv <= 17.02] <- "Low value"`
 
 -------------------
 
-### Descriptive analysis on 'Categorial data'
+### transform data
 
-```{r table, echo = FALSE}
+```{r q3_1, echo = FALSE}
 question_text(
-  "Let's say you are analysing a variable 'criminal_record'(reoffending criminal records of prisoners) using 'recidivism' data. 
+  "The 'prison' data we used for this week homework task has a variable 'gdpPercap' and lets say you want to create a new categorical variables 'high_low_gdp' using the 'gdpPercap' variable. 
   
-  The variable has two values 'Yes' and 'No'. To calculate a count of obervation on the valid value of the 'criminal_record' variable, you want to use the table() function. 
+  The mean value of 'gdpPercap' is 11888.5 and you want to make two values 'low_gdp' and 'high_gdp' using the mean value. 
   
-  Please enter the code you need to get a count of observations (see 2.3.2 in the lab note):",
+  Ok, so the data name is 'prison', a numeric variable is 'gdpPercap', a new categorical varaible is 'high_low_gdp', and you are creating the value is 'high_gdp' using the mean value, 11888.5. 
   
+  Apply the code we learn in week 3 'Boston$lowval[Boston$medv > 17.02] <- \"Higher value\"' please enter the code you need to put in the blank space below (see 3.4 in the lab note)
   
-  answer("table(criminal_record)", message = "Don't forget to start with the data name"),
-  answer("table(recidivism$criminal_record)", correct = TRUE),
+  _______________________________________________ <- \"high_gdp\"",
+  
+  answer("prisongdpPercap$[prison$high_low_gdp > 11888.5]", message = "so close! let's try again"),
+  answer("prison$high_low_gdp[prison$gdpPercap > 11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap>11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap> 11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap >11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap >11888.5]" , correct = TRUE),
   allow_retry = TRUE
 )
 ```
 
-### Data manipulation: missing variable
+### visualise data
 
-```{r isna, echo = FALSE}
+<img src="https://user-images.githubusercontent.com/98951792/219618616-8a3833e2-a6c9-4e24-8e42-3f5b66d2c8ed.png">
+```{r q3_2, echo = FALSE}
 question_radio(
-  "You found the 'criminal_record' variable has some missing observations. 
+  "ggplot2 is a plotting package that provides helpful commands to create complex plots from data in a data frame. 
   
-  To see how many observations are missing, which code would you use?:",
+  Here we are going to create a graph presenting the correlation of two variables 'assaults' and 'domestic_violence'.
   
-  answer("select(recidivism, criminal_record)", message = "nah- this is fo 'variable selection"),
-  answer("mean(is.na(recidivism$criminal_record))", message = "mean? really?"),
-  answer("class(recidivism$criminal_record)", message = "think twice"),
-  answer("sum(is.na(recidivism$criminal_record))", correct = TRUE),
-  allow_retry = TRUE
-)
-```
-
-### Data manipulation: dplyr
-
-<img src="https://user-images.githubusercontent.com/98951792/217301605-8f3f74e3-4b81-46f7-aec0-bd9701cc81e7.png">
-```{r filter, echo = FALSE}
-question_radio(
-  "dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.
+  What variable is mapped to y, and what is mapped to x, and what is mapped to color?:",
   
-  Let's say you are intersted in ONLY prisoners who have previous crime records not all of them.
-  
-  Again, they are recorded as 'Yes' to the 'criminal_record' variable. 
-  
-  To filter these observations which code would you use:",
-  
-  answer("mutate(recidivism, criminal_record == 'Yes')", message = "nah- this is for 'variable selection"),
-  answer("select(recidivism, criminal_record == 'Yes')", message = "this will tell you proportion, not count"),
-  answer("filter(recidivism, criminal_record == 'Yes')", correct = TRUE),
-  answer("summarise(recidivism, criminal_record == 'Yes')", message = "cmon-"),
+  answer("aes(x=assaults, y=domestic_violence, fill=police999call)", message = "nah- diff colour option we are using"),
+  answer("aes(x=assaults, y=domestic_violence, colour=police999call)", correct = TRUE),
+  answer("aes(x=domestic_violence, y=assaults, colour=police999call)", message = "see the variable names on the xy-axis"),
+  answer("aes(x=domestic_violence, y=assaults, alpha=police999call)", message = "cmon-"),
   allow_retry = TRUE
 )
 ```
