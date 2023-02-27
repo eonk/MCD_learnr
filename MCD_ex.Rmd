@@ -296,3 +296,122 @@ question_radio(
 )
 ```
 
+-------------------
+
+## Week 4
+
+This week we used the following R functions: 
+
+**import data: 'haven' package**
+
++ `read_dta()`
+
+**explore data**
+
++ `class()`
+
++ `attributes()`
+
++ `summary()`
+
++ `skim()`
+
++ `mosaic()`
+
++ `vis_dat()`
+
+**explore data: descriptive statistics**
+
++ `table()`
+
++ `mean()`
+
++ `median()`
+
++ `modeest::mlv()`
+
+**manipulate data: dplyr package**
+
++ `select()`
+
++ `mutate()`
+
+**manpulate data: missing variable**
+
++ `na.omit()`
+
++ `colMeans(is.na())`
+
++ `df$at_sexviol[df$qb10_11 == 1 | df$qb10_12 == 1] <- NA`
+
++ `levels(df$urban_f)[levels(df$urban_f) == 'DK'] <- NA`
+
+**change a variable name**
+
++ `rename()`
+
++ `colnames(df)[colnames(df)=="d10"] <- "gender"`
+
++ `names(df)[4:7] <- c("age", "politics", "urban", "occupation")`
+
+**creat list**
+
++ `northern_list <- c("DK", "FI", "SE")`
+
+**transform a variable into a factor variable**
+
++ `as_factor()`
+
+**transform a variable into a numeric variable**
+
++ `as.numeric()`
+
+**create a categorical variable using a numeric variable**
+
++ `Boston$lowval[Boston$medv <= 17.02] <- "Low value"`
+
+-------------------
+
+### transform data
+
+```{r q3_1, echo = FALSE}
+question_text(
+  "The 'prison' data we used for this week homework task has a variable 'gdpPercap' and lets say you want to create a new categorical variables 'high_low_gdp' using the 'gdpPercap' variable. 
+  
+  The mean value of 'gdpPercap' is 11888.5 and you want to make two values 'low_gdp' and 'high_gdp' using the mean value. 
+  
+  Ok, so the data name is 'prison', the numeric variable is 'gdpPercap',  the new categorical varaible is 'high_low_gdp', and you are creating one of the values, 'high_gdp' using the mean value, 11888.5.
+  
+  Apply the code we learn in week 3 'Boston$lowval[Boston$medv > 17.02] <- \"Higher value\"' please enter the code you need to put in the blank space below (see 3.4 in the lab note)
+  
+  _______________________________________________ <- \"high_gdp\"",
+  
+  answer("prisongdpPercap$[prison$high_low_gdp > 11888.5]", message = "so close! let's try again"),
+  answer("prison$high_low_gdp[prison$gdpPercap > 11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap>11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap> 11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap >11888.5]", correct = TRUE),
+  answer("prison$high_low_gdp[prison$gdpPercap >11888.5]" , correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+### visualise data
+
+<img src="https://user-images.githubusercontent.com/98951792/219618616-8a3833e2-a6c9-4e24-8e42-3f5b66d2c8ed.png">
+```{r q3_2, echo = FALSE}
+question_radio(
+  "ggplot2 is a plotting package that provides helpful commands to create complex plots from data in a data frame. 
+  
+  Here we are going to create a graph presenting the correlation of two variables 'assaults' and 'domestic_violence'.
+  
+  What variable is mapped to y, and what is mapped to x, and what is mapped to color?:",
+  
+  answer("aes(x=assaults, y=domestic_violence, fill=police999call)", message = "nah- diff colour option we are using"),
+  answer("aes(x=assaults, y=domestic_violence, colour=police999call)", correct = TRUE),
+  answer("aes(x=domestic_violence, y=assaults, colour=police999call)", message = "see the variable names on the xy-axis"),
+  answer("aes(x=domestic_violence, y=assaults, alpha=police999call)", message = "cmon-"),
+  allow_retry = TRUE
+)
+```
+
