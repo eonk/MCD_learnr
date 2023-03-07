@@ -374,7 +374,7 @@ This week we used the following R functions:
 question_text(
   "Let's say you are analsing prisoners's survey data (prison). The varaible you are intesreted in (druguse) coded 'Refused Answer' as 99 and you want to replace it as NA. 
   
-  Apply the code we learn this week 'df$at_sexviol[df$qb10_11 == 1 | df$qb10_12 == 1] <- NA' please enter the code you need to put in the blank space below. 
+  Apply the code we learn this week 'df$at_sexviol[df$qb10_11 == 1 | df$qb10_12 == 1] <- NA', enter the code you need to put in the blank space below. 
   
   _______________________________________________ <- NA",
   
@@ -389,7 +389,7 @@ question_text(
 )
 ```
 
-### excluding missing data
+### exclude missing data
 
 ```{r q4_2, echo = FALSE}
 question_radio(
@@ -409,3 +409,83 @@ question_radio(
 )
 ```
 
+-------------------
+
+## Week 5
+
+This week we used the following R functions: 
+
+**generate random data**
+
++ `set.seed()`
+
++ `rnbinom(100000, mu = 1, size = 0.3)`
+
+**select sample data**
+
++ `sample(fake_population$IQ, 10)`
+
++ `do(15) * with(sample(fake_population, 10), mean(IQ))`
+
+**create dataframe and variable**
+
++ `data.frame()`
+
++ `fake_population$offender <- ifelse(fake_population$crimecount > 0, c("Yes"), c("No"))`
+
++ `fake_population$IQ[fake_population$offender == "No"] <- rnorm(64377, mean = 100, sd = 15)`
+
++ `IQ_means <- ddply(fake_population, "offender", summarise, IQ = mean(IQ))`
+
+**explore data: descriptive statistics**
+
++ `mean()`
+
++ `sd()`
+
++ `favstats(~with, data = sampd_IQ_30)`
+
+**explore data: visualise data**
+
++ `qplot()`
+
+-------------------
+
+### create a table
+
+```{r q5_1, echo = FALSE}
+question_text(
+   "Let's say you are analsing the 'income' differences between two groups: people who have a crime record or not.
+   
+   As the first step for the analysis, you want to create a table showing the mean difference of two groups using the 'plyr' package.
+   
+   You are using two varaibles: 1) 'income' (numeric) which has the income data and 2) 'criminal' (categorical) which is coded as 'Yes' and 'No' in the 'df' dataframe. 
+   
+   Apply the code we learn this week, enter the code you need to put in the blank space below.
+   
+   ddply(df, \"criminal\", _____________, mean_income = mean(income))",
+  
+  answer("summarise", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+### produce a graph
+
+<img src="https://user-images.githubusercontent.com/98951792/223280685-736fe7ea-e913-421d-b92f-63034009d7d2.png">
+
+```{r q5_2, echo = FALSE}
+question_radio(
+  "As the second step, you want to visually assess the mean differnces. To produce the graph above, which code which code will you use?:",
+  
+  answer("ggplot(df, aes(x = income, colour = criminal)) + 
+    geom_density()"),
+  answer("ggplot(df, aes(x = income, fill = criminal)) + 
+    geom_boxplot()", correct = TRUE),
+  answer("ggplot(df, aes(x = income, colour = criminal)) + 
+    geom_boxplot()"),
+  answer("ggplot(df, aes(x = criminal, fill = income)) + 
+    geom_boxplot()", message = "cmon-"),
+  allow_retry = TRUE
+)
+```
