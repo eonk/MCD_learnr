@@ -476,7 +476,7 @@ question_text(
 
 ```{r q5_2, echo = FALSE}
 question_radio(
-  "As the second step, you want to visually assess the mean differnces. To produce the graph above, which code which code will you use?:",
+  "As the second step, you want to visually assess the mean differnces. To produce the graph above, which code will you use?:",
   
   answer("ggplot(df, aes(x = income, colour = criminal)) + 
     geom_density()"),
@@ -489,3 +489,75 @@ question_radio(
   allow_retry = TRUE
 )
 ```
+
+-------------------
+
+## Week 6
+
+This week we used the following R functions: 
+
+**t.test**
+
++ `t.test(tcviolent ~ sex, data = BCS0708)`
+
+**measure effect size:effsize**
+
++ `cohen.d(BCS0708$tcviolent ~ BCS0708$sex)`
+
+**power analysis:psych, pwr**
+
++ `pwr.t2n.test(n1 = 4475, n2 = 3959, d= 0.2)`
+
+**ANOVA analysis**
+
++ `fearmodel.1<- aov(tcviolent ~ ethgrp2, data=BCS0708)`
+
+**explore data: decriptive analysis**
+
++ `describeBy(BCS0708$tcviolent, BCS0708$sex)`
+
++ `describeBy(BCS0708$tcviolent, BCS0708$ethgrp2)`
+
+**explore data: visualise data**
+
++ `plotmeans(tcviolent ~ ethgrp2, data = BCS0708)`
+
+-------------------
+
+### create descriptive statistics by group 
+
+```{r q6_1, echo = FALSE}
+question_radio(
+  "Let's say you are comparing the mean difference of 'income' between five different education level groups 'edu'. 
+  
+  For the first step, you want to create a table showing the basic descriptive statistics by each group. 
+  
+  Using the 'descripbeBy' function, which code will you use?:",
+  
+  answer("describeBy(df$edu, df$income)", message = "NOPE"),
+  answer("describeBy(df$income, df$edu)", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+
+### conduct ANOVA test
+
+```{r q6_2, echo = FALSE}
+question_text(
+   "You are using two varaibles: 1) 'income' (numeric) which has the income data and 2) 'edu' (categorical) which has 5 different education levels in the 'df' dataframe. 
+   
+   Apply the code we learn this week, enter the code you need to put in the blank space below.
+   
+   aov(_____________________, data = df)",
+  
+  answer("income~edu", correct = TRUE),
+  answer("income ~ edu", correct = TRUE),
+  answer("income~ edu", correct = TRUE),
+  answer("income ~edu", correct = TRUE),
+  answer("income ~ edu ", correct = TRUE),
+  allow_retry = TRUE
+)
+```
+
+
