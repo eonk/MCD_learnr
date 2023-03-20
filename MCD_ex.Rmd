@@ -566,66 +566,64 @@ question_text(
 
 This week we used the following R functions: 
 
-**t.test**
+**reorder factor levels**
 
-+ `t.test(tcviolent ~ sex, data = BCS0708)`
++ `df$variable <- factor(df$variable, levels = c("a", "b", "c", "d"))`
 
-**measure effect size:effsize**
+**calculate Chi^2 using gmodels**
 
-+ `cohen.d(BCS0708$tcviolent ~ BCS0708$sex)`
++ `with(BCS0708, CrossTable(rubbcomm, bcsvictim, expected = TRUE, prop.c = FALSE, prop.t = FALSE, format = c("SPSS")))`
 
-**power analysis:psych, pwr**
+**calculate Chi^2 using a table**
 
-+ `pwr.t2n.test(n1 = 4475, n2 = 3959, d= 0.2)`
++ `mytable.1 <- table(BCS0708$rubbcomm, BCS0708$bcsvictim)`
 
-**ANOVA analysis**
++ `chisq.test(mytable.1, simulate.p.value = TRUE)`
 
-+ `fearmodel.1<- aov(tcviolent ~ ethgrp2, data=BCS0708)`
+**the Fisher’s Exact Test**
 
-**explore data: decriptive analysis**
++ `fisher.test(BCS0708$rubbcomm, BCS0708$bcsvictim)`
 
-+ `describeBy(BCS0708$tcviolent, BCS0708$sex)`
+**Gamma test using vcdExtra**
 
-+ `describeBy(BCS0708$tcviolent, BCS0708$ethgrp2)`
++ `GKgamma(mytable)` 
 
-**explore data: visualise data**
+**calculate odds and odd ratios using vcd**
 
-+ `plotmeans(tcviolent ~ ethgrp2, data = BCS0708)`
++ `oddsratio(mytable.3, stratum = NULL, log = FALSE)`
 
 -------------------
 
-### create descriptive statistics by group 
+### reorder factor levels
 
-```{r q6_1, echo = FALSE}
-question_radio(
-  "Let's say you are comparing the mean difference of 'income' between five different education level groups 'edu'. 
-  
-  For the first step, you want to create a table showing the basic descriptive statistics by each group. 
-  
-  Using the 'descripbeBy' function, which code will you use?:",
-  
-  answer("describeBy(df$edu, df$income)", message = "NOPE"),
-  answer("describeBy(df$income, df$edu)", correct = TRUE),
-  allow_retry = TRUE
-)
-```
-
-
-### conduct ANOVA test
-
-```{r q6_2, echo = FALSE}
+```{r q7_1, echo = FALSE}
 question_text(
-   "You are using two varaibles: 1) 'income' (numeric) which has the income data and 2) 'edu' (categorical) which has 5 different education levels in the 'df' dataframe. 
+   "In your education variable, there are four categories; elementray, middle, high, college. You made a table and found you got the alphabetical order such as college, elementray, high, middle. In order to change the order by the level of education, which functions should you use?
    
    Apply the code we learn this week, enter the code you need to put in the blank space below.
    
-   aov(_____________________, data = df)",
+   df$education <- factor(df$education, ______ = c(\"elementary\", \"middle\", \"high\", \"college\"))",
   
-  answer("income~edu", correct = TRUE),
-  answer("income ~ edu", correct = TRUE),
-  answer("income~ edu", correct = TRUE),
-  answer("income ~edu", correct = TRUE),
-  answer("income ~ edu ", correct = TRUE),
+  answer("levels", correct = TRUE),
+  answer("levels ", correct = TRUE),
+  answer("levels  ", correct = TRUE),
   allow_retry = TRUE
 )
 ```
+
+### conduct chi^2 test
+
+```{r q7_2, echo = FALSE}
+question_radio(
+  "Let's say you are analysing the relationship between two categorical variables. In order to calculate chi squre test using gmodels, which code will you use?:",
+  
+  answer("with(BCS0708, CrossTable(rubbcomm, bcsvictim, prop.chisq=TRUE))", message = "NOPE"),
+  answer("with(BCS0708, CrossTable(rubbcomm, bcsvictim, expected=TRUE))", correct = TRUE),
+  answer("with(BCS0708, CrossTable(rubbcomm, bcsvictim, prop.c=TRUE))", message = "NOPE"),
+  answer("with(BCS0708, CrossTable(rubbcomm, bcsvictim, asresid=TRUE))", message = "NOPE"),
+  answer("with(BCS0708, CrossTable(rubbcomm, bcsvictim, prop.t=TRUE))", message = "NOPE"),
+  allow_retry = TRUE
+)
+```
+
+
